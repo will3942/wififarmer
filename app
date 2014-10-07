@@ -44,7 +44,11 @@ tcpdump.stdout.on('data', function(data) {
 							var macBuild = raw[r][parseInt(probeIndex) - 1].replace("SA:", "").replace(/:/g,"");
 							console.log(macBuild);
 						}
-						request({url: 'http://wifi-privacy.herokuapp.com/devices/mac-'+macBuild+'/networks', body: {'name':build,'location':argv.location}, json:true, method: 'post'});
+						request({url: 'http://wifi-privacy.herokuapp.com/devices/mac-'+macBuild+'/networks', body: {'name':build,'location':argv.location}, json:true, method: 'post'}, function (error, response, body) {
+							if (error) {
+								console.log(error);
+							}
+						});
 					}
 				}
 			}
