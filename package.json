@@ -1,0 +1,9 @@
+{
+  "name": "wififarmer",
+  "description": "Farm WiFi probe requests",
+  "author": "Will Evans <will@will3942.com>",
+  "dependencies": {
+    "request": "~2.45.0",
+    "optimist": "~0.6.1"
+  }
+}
